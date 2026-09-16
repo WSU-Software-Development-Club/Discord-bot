@@ -15,5 +15,11 @@ Before writing code, you need to register your bot with Discord
 - Under *Bot Permissions*, select the permissions your bot needs (e.g., Send Messages, Read Message History).
 - Copy the generated URL at the bottom of the page. Paste it into your browser, choose your server, and authorize the bot.
 
+# Update your package manager
+- sudo apt update && sudo apt upgrade -y
+
+# Install Python 3, pip, and virtual environment utilities
+- sudo apt install python3 python3-pip python3-venv -y
+
 # Start the Bot: 
 - python bot.py
