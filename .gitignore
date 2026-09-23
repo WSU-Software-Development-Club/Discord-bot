@@ -6,6 +6,9 @@
 # Virtual Environment (system specific)
 Discord-bot/bot-env
 
+# Build files
+my-discord-bot/cogs/__pycache__/command_cog.cpython-314.pyc
+
 # Logs
 logs/
 *.log
