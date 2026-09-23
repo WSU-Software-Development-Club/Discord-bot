@@ -3,7 +3,7 @@ from discord.ext import commands
 
 
 class EventCog(commands.Cog):
-    def __init__(self, bot: commands.Bot):
+    def __init__(self, bot: commands.Bot) -> None:
         self.bot = bot
 
     @commands.Cog.listener()
@@ -17,5 +17,5 @@ class EventCog(commands.Cog):
         if "swear" in message.content.lower():
             await message.channel.send("Hey, you can't say the swear word.")
 
-async def setup(bot: commands.Bot):
+async def setup(bot: commands.Bot) -> None:
     await bot.add_cog(EventCog(bot))
