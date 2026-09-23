@@ -15,11 +15,26 @@ Before writing code, you need to register your bot with Discord
 - Under *Bot Permissions*, select the permissions your bot needs (e.g., Send Messages, Read Message History).
 - Copy the generated URL at the bottom of the page. Paste it into your browser, choose your server, and authorize the bot.
 
-# Update your package manager
+# windows python install
+
+### Steps to Install Python 3
+- Go to the Official Python Downloads Page using your web browser.
+- Click the download button for the latest Python 3 version to get the .exe installer file.
+- Open your downloads folder and double-click the installer file to start the setup.
+- Check the box at the bottom that says Add python.exe to PATH (or Add Python to environment variables) so you can run Python from the command line.
+- Click Install Now and wait for the process to finish.
+### python pip
+- On Windows, pip (the package manager for Python) comes automatically bundled with all modern official Python installers.
+- You do not need to install it as a separate package manager like you do on Linux (python3-pip
+
+  
+
+# python for linux
+### Update your package manager
 - sudo apt update && sudo apt upgrade -y
 
-# Install Python 3, pip, and virtual environment utilities
+### Install Python 3, pip, and virtual environment utilities
 - sudo apt install python3 python3-pip python3-venv -y
 
-# Start the Bot: 
+### Start the Bot: 
 - python bot.py
