@@ -26,7 +26,8 @@ Before writing code, you need to register your bot with Discord
 ### python pip
 - On Windows, pip (the package manager for Python) comes automatically bundled with all modern official Python installers.
 - You do not need to install it as a separate package manager like you do on Linux (python3-pip
-
+### python venv -y
+- On Windows, the venv module comes pre-installed and bundled automatically with your standard Python installation. You can start using it immediately
   
 
 # python for linux
