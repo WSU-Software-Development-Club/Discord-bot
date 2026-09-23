@@ -17,11 +17,12 @@ Before testing your bot code, you need a bot registered with Discord
 
 ## Installing Python
 ### Windows Python Install
-- Go to the Official Python Downloads Page using your web browser.
-- Click the download button for the latest Python 3 version to get the .exe installer file.
+- Go to the *Download Python* page. (https://www.python.org/downloads/)
+- Click *Download Python* button to get the .exe installer file.
 - Open your downloads folder and double-click the installer file to start the setup.
-- Check the box at the bottom that says *Add python.exe to PATH*. (Adds Python to the system environment variables enabling `python` as a command.)
-- Click Install Now and wait for the process to finish.
+- Check the box at the bottom that says *Add python.exe to PATH*. (This adds Python to the system environment variables, enabling `python` as a console command.)
+- Click *Install Now* and wait for the process to finish.
+
 Unlike Linux, pip and venv are bundled with your Python install(s).
 
 ### Linux Python Install
