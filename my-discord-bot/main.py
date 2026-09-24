@@ -13,7 +13,7 @@ class WSUBot(commands.Bot):
     _uptime: datetime.datetime = datetime.datetime.now(datetime.UTC)
 
     def __init__(self, prefix: str, ext_dir: str, *args: typing.Any, **kwargs: typing.Any) -> None: 
-        intents = discord.Intents.default() # Remember as per README to enable your intents!
+        intents = discord.Intents.default()
         intents.members = True
         intents.message_content = True
         super().__init__(*args, **kwargs, command_prefix=commands.when_mentioned_or(prefix), intents=intents)
