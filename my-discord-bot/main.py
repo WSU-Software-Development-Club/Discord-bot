@@ -1,13 +1,18 @@
-import datetime, logging, os, traceback, typing
+import datetime
+import logging
+import os
+import traceback
+import typing
 
-import aiohttp, discord
+import aiohttp
+import discord
 from discord.ext import commands
+from dotenv import load_dotenv
 
-# Library for .env files. You'll need a .env right beside this script with: BOT_TOKEN="<yourtokenhere>" inside it.
+# Dotenv for .env files. You'll need a .env right beside this script with: BOT_TOKEN="<yourtokenhere>" inside it.
 # We should already have it setup so that when you do git commits, you will not accidentally share your .env.
 # Regardless, be careful with your bot token and do not put it in the repository.
 # If you do, go to https://discord.com/developers/applications and go reset your bot token.
-from dotenv import load_dotenv
 
 
 class WSUBot(commands.Bot):
