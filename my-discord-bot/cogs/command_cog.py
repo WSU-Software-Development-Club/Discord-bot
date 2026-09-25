@@ -2,11 +2,12 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
+
 class CommandCog(commands.Cog):
     def __init__(self, bot: commands.Bot) -> None:
         self.bot = bot
 
-    # Primarily here to demonstrate prefix-only commands. This command only works with `$supersecret` or `@<botname> supersecret` 
+    # Primarily here to demonstrate prefix-only commands. This command only works with `$supersecret` or `@<botname> supersecret`
     # and doesn't appear as a slash-command, hence the premise of it being the supersecret.
     @commands.command(name="supersecret")
     async def supersecret(self, ctx: commands.Context) -> None:
@@ -18,7 +19,9 @@ class CommandCog(commands.Cog):
             self.spoilsport = ctx.author.id
 
     # A basic example command. This is a slash-only command where `/hello` gets you the response "Hello!"
-    @app_commands.command(name="hello", description="Say hello to our new friend! If you value your soul.")
+    @app_commands.command(
+        name="hello", description="Say hello to our new friend! If you value your soul."
+    )
     async def hello(self, integration: discord.Integration) -> None:
         await integration.response.send_message("Hello!")
 
@@ -26,11 +29,11 @@ class CommandCog(commands.Cog):
     # this command is actually made for something important whilst demonstrating hybrid commands.
     @commands.hybrid_command(name="sync", description="Sync commands to your guild.")
     async def sync(self, ctx: commands.Context) -> None:
-    # Specifically, this command can be called with `$sync`, `@<botname> sync`, and `/sync`. The command takes all
-    # of our defined commands we've made, which discord.ext commands library tracks, and it tells the
-    # guild which `sync` is called from that we want to deploy our created commands into the guild instance of the bot.
-    # This ALSO requires that you set up commands permissions for the bot. In the Dev Portal under Installation,
-    # add application.commands to Guild Install Scopes and Use Slash Commands in Guild Install Permissions. 
+        # Specifically, this command can be called with `$sync`, `@<botname> sync`, and `/sync`. The command takes all
+        # of our defined commands we've made, which discord.ext commands library tracks, and it tells the
+        # guild which `sync` is called from that we want to deploy our created commands into the guild instance of the bot.
+        # This ALSO requires that you set up commands permissions for the bot. In the Dev Portal under Installation,
+        # add application.commands to Guild Install Scopes and Use Slash Commands in Guild Install Permissions.
         if ctx.guild is None:
             ctx.send("This command is only for server slash-command syncing.")
             return
@@ -41,6 +44,7 @@ class CommandCog(commands.Cog):
         synced = await self.bot.tree.sync(guild=ctx.guild)
 
         await ctx.send(f"Synced {len(synced)} command(s).", ephemeral=True)
+
 
 async def setup(bot: commands.Bot) -> None:
     await bot.add_cog(CommandCog(bot))

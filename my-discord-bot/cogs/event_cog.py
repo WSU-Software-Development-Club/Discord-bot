@@ -17,5 +17,6 @@ class EventCog(commands.Cog):
         if "swear" in message.content.lower():
             await message.channel.send("Hey, you can't say the swear word.")
 
+
 async def setup(bot: commands.Bot) -> None:
     await bot.add_cog(EventCog(bot))
