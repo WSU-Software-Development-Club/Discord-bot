@@ -1,6 +1,7 @@
 import datetime
 import logging
 import os
+import sys
 import traceback
 import typing
 
@@ -82,7 +83,7 @@ class WSUBot(commands.Bot):
             super().run(str(os.getenv("BOT_TOKEN")), *args, **kwargs)
         except (discord.LoginFailure, KeyboardInterrupt):
             self.logger.info("Exiting...")
-            exit()
+            sys.exit()
 
     @property
     def user(self) -> discord.ClientUser:
