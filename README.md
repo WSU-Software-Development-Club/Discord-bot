@@ -39,4 +39,3 @@ Before writing code, you need to register your bot with Discord
 
 ### Start the Bot: 
 - python bot.py
-
