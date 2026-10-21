@@ -3,8 +3,12 @@ node_modules/
 
 # Environment variables (never commit real secrets)
 .env
+.env/
 .env.local
 .env.*.local
+
+# possable verual machine enviroment
+.venv/
 
 # Build output
 dist/

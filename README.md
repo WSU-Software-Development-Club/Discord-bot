@@ -1,19 +1,44 @@
-# Discord-bot
-the goal of this project is to teach beginner level programmer how to work on a group project an learn basic CS applications and tools. In this project specifically we will be designing discord bots with various applications. 
+# Discord Bot
 
-# Step 1: Create Your Bot on the Discord Portal
-Before writing code, you need to register your bot with Discord
-- Go to the *Discord Developer Portal*. (https://discord.com/developers/applications)
-- Click *New Application* in the top right, name your bot, and click *Create*.
-- On the left menu, click *Bot*.
-- Click Reset Token and copy the long string of characters. Keep this token secret—it is your bot’s password.
-- Scroll down on the same page to *Privileged Gateway Intents*. Turn on *Presence Intent*, *Server Members Intent*, and *Message Content Intent*. Click *Save Changes*
+A minimal Python (discord.py) bot, containerized with Docker.
 
-# Step 2: Invite the Bot to Your Server
-- While still in the Developer Portal, go to the *OAuth2* tab on the left menu, then select *URL Generator*.
-- Under *Scopes*, check the box for *bot*.
-- Under *Bot Permissions*, select the permissions your bot needs (e.g., Send Messages, Read Message History).
-- Copy the generated URL at the bottom of the page. Paste it into your browser, choose your server, and authorize the bot.
+## Setup
 
-# Start the Bot: 
-- python bot.py
+1. Create a bot at https://discord.com/developers/applications and copy its token.
+2. Enable **Message Content Intent** under the bot's settings.
+3. `cp .env.example .env` and paste your token into `.env`.
+
+## Run with Docker Compose
+
+```bash
+docker compose up -d --build
+docker compose logs -f
+```
+
+## Run with plain Docker
+
+```bash
+docker build -t discord-bot .
+docker run -d --name discord-bot --env-file .env --restart unless-stopped discord-bot
+```
+
+## Run locally (no Docker)
+
+```bash
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+python bot.py
+```
+
+## Commands
+
+- `!ping` – replies with latency
+- `/hello` – slash command greeting
+
+## GitHub notes
+
+- `.env` is git-ignored, so your token is never pushed. Only `.env.example` is committed.
+- The included workflow builds the image on every push and publishes it to
+  `ghcr.io/<your-user>/<repo>:latest` from `main`.
+- If your token ever leaks, reset it in the Developer Portal immediately.
