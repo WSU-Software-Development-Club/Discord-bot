@@ -1,13 +1,16 @@
 # Environment variables (never commit real secrets)
 .env
+.env/
 .env.local
 .env.*.local
 
-# Virtual Environment (system specific)
-Discord-bot/bot-env
+# possable verual machine enviroment
+.venv/
 
-# Build files
-__pycache__
+# Build output
+dist/
+build/
+*.tsbuildinfo
 
 # Logs
 logs/
